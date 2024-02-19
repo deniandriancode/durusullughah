@@ -5,7 +5,11 @@ import { Noto_Naskh_Arabic } from 'next/font/google';
 
 const arabicFont = Noto_Naskh_Arabic({ subsets: ['arabic'], weight: ['400', '700'] });
 
-export function SideNav({ handleToggleSidenav, openSidenav }) {
+interface SideNavT {
+  handleToggleSidenav: any,
+  openSidenav: boolean
+};
+export function SideNav({ handleToggleSidenav, openSidenav }: SideNavT) {
   return (
     <>
       <button className={`fixed top-4 hidden lg:inline left-4 ${openSidenav && 'lg:left-[310px]'}`}><AiOutlineMenu onClick={handleToggleSidenav} /></button>
@@ -108,7 +112,10 @@ export function Footer() {
   );
 }
 
-export function MainContent({ openSidenav }) {
+interface MainContentT {
+  openSidenav: boolean
+};
+export function MainContent({ openSidenav }: MainContentT) {
   return (
     <section className="flex">
       { openSidenav && <SideNavPlacehoder /> }
