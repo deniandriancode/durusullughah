@@ -10,6 +10,9 @@ export default function Home() {
 
   function handleToggleSidenav() {
     setOpenSidenav(!openSidenav);
+  }
+
+  function handleToggleMobileSidenav() {
     setOpenMobileSidenav(!openMobileSidenav);
   }
 
@@ -17,6 +20,7 @@ export default function Home() {
     <main>
       <SideNav 
         handleToggleSidenav={handleToggleSidenav} 
+        handleToggleMobileSidenav={handleToggleMobileSidenav} 
         openSidenav={openSidenav}
         openMobileSidenav={openMobileSidenav}
       />

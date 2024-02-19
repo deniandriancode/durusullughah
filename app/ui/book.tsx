@@ -7,10 +7,11 @@ const arabicFont = Noto_Naskh_Arabic({ subsets: ['arabic'], weight: ['400', '700
 
 interface SideNavT {
   handleToggleSidenav: any,
+  handleToggleMobileSidenav: any,
   openSidenav: boolean,
   openMobileSidenav: boolean
 };
-export function SideNav({ handleToggleSidenav, openSidenav, openMobileSidenav }: SideNavT) {
+export function SideNav({ handleToggleSidenav, handleToggleMobileSidenav, openSidenav, openMobileSidenav }: SideNavT) {
   return (
     <>
       <button className={`fixed top-4 hidden lg:inline left-4 ${openSidenav && 'lg:left-[310px]'}`}><AiOutlineMenu onClick={handleToggleSidenav} /></button>
@@ -52,7 +53,7 @@ export function SideNav({ handleToggleSidenav, openSidenav, openMobileSidenav }:
           <li><Link href="#" className="hover:underline">33. Chapter Name</Link></li>
         </ul>
       </nav> }
-      <button className={`fixed top-4 inline lg:hidden z-[10] ${openMobileSidenav ? 'right-4 min-[487px]:left-[310px]' : 'right-4 min-[487px]:left-4'}`}><AiOutlineMenu onClick={handleToggleSidenav} /></button>
+      <button className={`fixed top-4 inline lg:hidden z-[10] ${openMobileSidenav ? 'right-4 min-[487px]:left-[310px]' : 'right-4 min-[487px]:left-4'}`}><AiOutlineMenu onClick={handleToggleMobileSidenav} /></button>
       { openMobileSidenav && <nav className={`fixed top-0 left-0 bg-white h-full px-4 py-6 w-full min-[487px]:w-[300px] overflow-y-auto block lg:hidden`}>
         <p className="text-xl">Chapter List</p>
         <ul className="my-4">
