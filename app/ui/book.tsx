@@ -1,47 +1,90 @@
 import Link from 'next/link';
-import { AiOutlineMenu } from 'react-icons/ai';
+import { AiOutlineMenu, AiOutlineCopyright } from 'react-icons/ai';
+
+import { Noto_Naskh_Arabic } from 'next/font/google';
+
+const arabicFont = Noto_Naskh_Arabic({ subsets: ['arabic'], weight: ['400', '700'] });
 
 export function SideNav({ handleToggleSidenav, openSidenav }) {
   return (
     <>
-      <button className={`fixed top-4 ${openSidenav ? 'left-[254px]' : 'left-4'}`}><AiOutlineMenu onClick={handleToggleSidenav} /></button>
-      { openSidenav && <nav className={`fixed top-0 left-0 h-full px-4 py-4 w-[244px] overflow-y-auto hidden lg:block`}>
+      <button className={`fixed top-4 hidden lg:inline left-4 ${openSidenav && 'lg:left-[310px]'}`}><AiOutlineMenu onClick={handleToggleSidenav} /></button>
+      { openSidenav && <nav className={`fixed top-0 left-0 bg-white h-full px-4 py-6 w-[300px] overflow-y-auto hidden lg:block`}>
         <p className="text-xl">Chapter List</p>
         <ul className="my-4">
-          <li><Link href="#" className="hover:underline">Chapter 1</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 2</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 3</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 4</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 5</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 6</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 7</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 8</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 9</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 10</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 11</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 12</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 13</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 14</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 15</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 16</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 17</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 18</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 19</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 20</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 21</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 22</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 23</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 24</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 25</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 26</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 27</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 28</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 29</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 30</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 31</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 32</Link></li>
-          <li><Link href="#" className="hover:underline">Chapter 33</Link></li>
+          <li><Link href="#" className="hover:underline">1. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">2. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">3. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">4. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">5. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">6. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">7. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">8. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">9. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">10. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">11. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">12. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">13. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">14. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">15. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">16. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">17. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">18. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">19. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">20. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">21. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">22. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">23. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">24. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">25. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">26. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">27. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">28. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">29. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">30. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">31. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">32. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">33. Chapter Name</Link></li>
         </ul>
+      </nav> }
+      <button className={`fixed top-4 inline lg:hidden z-[10] ${openSidenav ? 'right-4 min-[487px]:left-[310px]' : 'right-4 min-[487px]:left-4'}`}><AiOutlineMenu onClick={handleToggleSidenav} /></button>
+      { openSidenav && <nav className={`fixed top-0 left-0 bg-white h-full px-4 py-6 w-full min-[487px]:w-[300px] overflow-y-auto block lg:hidden`}>
+        <p className="text-xl">Chapter List</p>
+        <ul className="my-4">
+          <li><Link href="#" className="hover:underline">1. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">2. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">3. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">4. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">5. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">6. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">7. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">8. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">9. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">10. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">11. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">12. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">13. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">14. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">15. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">16. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">17. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">18. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">19. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">20. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">21. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">22. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">23. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">24. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">25. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">26. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">27. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">28. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">29. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">30. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">31. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">32. Chapter Name</Link></li>
+          <li><Link href="#" className="hover:underline">33. Chapter Name</Link></li>
+        </ul> 
       </nav> }
     </>
   );
@@ -49,8 +92,19 @@ export function SideNav({ handleToggleSidenav, openSidenav }) {
 
 function SideNavPlacehoder() {
   return (
-    <div className="w-56 h-full hidden lg:block">
+    <div className="w-[300px] h-full hidden lg:block">
     </div>
+  );
+}
+
+export function Footer() {
+  const date = new Date();
+  const year = date.getFullYear();
+
+  return (
+    <footer>
+      <p>Copyright <AiOutlineCopyright className="inline" /> {year}</p>
+    </footer>   
   );
 }
 
@@ -58,10 +112,10 @@ export function MainContent({ openSidenav }) {
   return (
     <section className="flex">
       { openSidenav && <SideNavPlacehoder /> }
-      <div className="container max-w-xl mx-auto px-4 py-8">
+      <div className="container max-w-xl mx-auto px-4 py-12">
         <h1 className="text-5xl font-bold">Main Content</h1>
         <div>
-          <p className="my-4 text-right">
+          <p className={`${arabicFont.className} arabic my-4`} dir="rtl">
             بال وقام التقليدي الأوربيين عل, لدحر ايطاليا، كما هو. هذا في للصين الإكتفاء الأوربيين. الى جيما بلاده لم, لم خلاف ليركز تزامناً ضرب, تم ومن عُقر أثره،. ما الشمل الكونجرس الاندونيسية يتم, عملية سبتمبر لليابان أي هذا. الطريق الإنذار، الى لم, ان قادة اليميني الدولارات كما.
           </p>
           <p className="my-4">Dolor velit perspiciatis sunt nesciunt perspiciatis Autem neque pariatur rem reiciendis vitae. Totam cumque laudantium nostrum neque voluptate sit. Ex libero iusto magni autem rerum quod Dolorem molestiae laboriosam voluptas</p>
@@ -69,6 +123,7 @@ export function MainContent({ openSidenav }) {
         </div>
         <p className="my-4">Sit tenetur reiciendis nesciunt tempore nemo debitis Harum voluptates dolore placeat placeat eveniet expedita officiis. Aliquid aspernatur quod corrupti fugit architecto! Commodi doloremque eligendi soluta rem ipsa Perferendis nesciunt omnis eum ea rerum illo. Vel cumque sunt qui harum quasi Quibusdam corporis omnis praesentium magnam vitae Dolores ipsum culpa autem nesciunt blanditiis. At eius quae.</p>
         <p className="my-4">Ipsum soluta laudantium provident similique sed Vero eius esse repellendus nam assumenda Aliquid quasi quo voluptas molestias delectus quaerat suscipit voluptates Quia totam ut sint deleniti natus in sapiente ducimus! Nam cumque vero unde quis eum quo. Beatae voluptates neque amet quasi earum quaerat deserunt! Consequatur ex veritatis nemo atque minus maxime Repudiandae iusto animi nostrum dolores laboriosam? Nihil fugit minus expedita quo saepe! Fugiat veniam esse laboriosam ullam modi? Earum asperiores optio reprehenderit commodi expedita Magni aspernatur facilis quis.</p>
+        <Footer />
       </div>
     </section>
   );

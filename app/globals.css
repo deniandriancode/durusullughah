@@ -5,3 +5,7 @@
 :root {
     font-size: calc(13px + 0.390625vw);
 }
+
+.arabic {
+    font-size: calc(20px + 0.390625vw);
+}
