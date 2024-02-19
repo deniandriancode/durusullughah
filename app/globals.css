@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-    font-size: calc(13px + 0.390625vw);
+    font-size: calc(15px + 0.390625vw);
 }
 
 .arabic {

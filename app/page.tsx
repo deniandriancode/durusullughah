@@ -6,9 +6,11 @@ import { useState } from 'react';
 
 export default function Home() {
   const [openSidenav, setOpenSidenav] = useState(true);
+  const [openMobileSidenav, setOpenMobileSidenav] = useState(false);
 
   function handleToggleSidenav() {
     setOpenSidenav(!openSidenav);
+    setOpenMobileSidenav(!openMobileSidenav);
   }
 
   return (
@@ -16,6 +18,7 @@ export default function Home() {
       <SideNav 
         handleToggleSidenav={handleToggleSidenav} 
         openSidenav={openSidenav}
+        openMobileSidenav={openMobileSidenav}
       />
       <MainContent openSidenav={openSidenav} />
     </main>
