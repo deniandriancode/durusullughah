@@ -1,30 +1,16 @@
-'use client'
-
 import Link from 'next/link';
 import { SideNav, MainContent } from '@/app/ui/book';
-import { useState } from 'react';
+import { Noto_Naskh_Arabic } from 'next/font/google';
+
+const arabicFont = Noto_Naskh_Arabic({ subsets: ['arabic'], weight: ['400', '700'] });
 
 export default function Home() {
-  const [openSidenav, setOpenSidenav] = useState(true);
-  const [openMobileSidenav, setOpenMobileSidenav] = useState(false);
-
-  function handleToggleSidenav() {
-    setOpenSidenav(!openSidenav);
-  }
-
-  function handleToggleMobileSidenav() {
-    setOpenMobileSidenav(!openMobileSidenav);
-  }
-
   return (
-    <main>
-      <SideNav 
-        handleToggleSidenav={handleToggleSidenav} 
-        handleToggleMobileSidenav={handleToggleMobileSidenav} 
-        openSidenav={openSidenav}
-        openMobileSidenav={openMobileSidenav}
-      />
-      <MainContent openSidenav={openSidenav} />
-    </main>
+    <section>
+      <h1 className={arabicFont.className + ' ' + "text-5xl text-center font-bold"} dir="rtl">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</h1>
+      <div className="my-12">
+        <p className="my-4">Introduction about what this site is about and a heartwarming welcome.</p>
+      </div>
+    </section>
   );
 }

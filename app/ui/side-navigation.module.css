@@ -1,0 +1,6 @@
+.side-nav {
+  --side-nav-width: 300px;
+  --button-position: calc(var(--side-nav-width)+10);
+  --mobile-breakpoint: 487px;
+  width: var(--side-nav-width);
+}
