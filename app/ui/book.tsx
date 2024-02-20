@@ -15,7 +15,7 @@ export function ChapterList() {
 
   const [collapse, setCollapse] = useState(true);
 
-  function handleCollapseMenu(event) {
+  function handleCollapseMenu(event: any) {
     event.stopPropagation();
     setCollapse(!collapse);
   }
