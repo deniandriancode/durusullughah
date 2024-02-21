@@ -1,68 +1,49 @@
 'use client';
 
 import Link from 'next/link';
-import { AiOutlineMenu, AiOutlineCopyright } from 'react-icons/ai';
+import { usePathname } from 'next/navigation';
+import { AiOutlineMenu, AiOutlineCopyright, AiOutlineRight } from 'react-icons/ai';
 import { Noto_Naskh_Arabic } from 'next/font/google';
 import clsx from 'clsx';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-import styles from '@/app/ui/side-navigation.module.css';
+import volumeLinkList from '@/app/lib/lesson';
 
 const arabicFont = Noto_Naskh_Arabic({ subsets: ['arabic'], weight: ['400', '700'] });
 
 export function ChapterList() {
   const linkStyle = "hover:underline";
 
-  const [collapse, setCollapse] = useState(true);
+  const [collapse, setCollapse] = useState(Array(volumeLinkList.length).fill(true));
 
-  function handleCollapseMenu(event: any) {
+  function handleCollapseMenu(event: any, idx: number) {
     event.stopPropagation();
-    setCollapse(!collapse);
+    setCollapse(arr => arr.map((a, i) => i === idx ? !a : a));
   }
+
+  const volumeLink = volumeLinkList.map((v, idx) => {
+    const lis = v.children.map(vv => {
+        return <li className={linkStyle} key={vv.id}><Link href={vv.href}>{vv.text}</Link></li>
+    });
+
+    return (
+      <li key={idx}>
+        <button 
+          className={clsx('flex justify-between items-center w-full text-left')} 
+          onClick={(event) => handleCollapseMenu(event, idx)}>
+            {v.text} <AiOutlineRight className="text-sm" />
+        </button>
+        <ul className={clsx("ms-4 overflow-y-hidden transition-all duration-500", collapse[idx] ? 'max-h-0' : 'max-h-[1000px]')}>
+          {lis}
+        </ul>
+      </li>
+    );
+  });
 
   return (
     <ul className="my-4">
       <li><Link href="/" className={linkStyle}>Introduction</Link></li>
-      <li>
-        <Link href="/lesson/vol-1" className={clsx(linkStyle, 'bg-gray-300 inline-block w-full')} onClick={handleCollapseMenu}>Volume I</Link>
-        <ul className={clsx("ms-4 overflow-y-hidden transition-all duration-500", collapse ? 'max-h-[1000px]' : 'max-h-0')}>
-          <li><Link href="/lesson/vol-1/chapter-1" className="hover:underline">1. What is This?</Link></li>
-          <li><Link href="#" className="hover:underline">2. Chapter Name</Link></li>
-          <li><Link href="#" className="hover:underline">3. Chapter Name</Link></li>
-          <li><Link href="#" className="hover:underline">4. Chapter Name</Link></li>
-          <li><Link href="#" className="hover:underline">5. Chapter Name</Link></li>
-        </ul>
-      </li>
-      <li>
-        <Link href="/lesson/vol-2" className={linkStyle}>Volume II</Link>
-        <ul className="ms-4">
-          <li><Link href="#" className="hover:underline">1. Chapter Name Amet voluptatum culpa exercitationem earum corrupti. Ipsam eaque</Link></li>
-          <li><Link href="#" className="hover:underline">2. Chapter Name</Link></li>
-          <li><Link href="#" className="hover:underline">3. Chapter Name</Link></li>
-          <li><Link href="#" className="hover:underline">4. Chapter Name</Link></li>
-          <li><Link href="#" className="hover:underline">5. Chapter Name</Link></li>
-        </ul>
-      </li>
-      <li>
-        <Link href="/lesson/vol-3" className={linkStyle}>Volume III</Link>
-        <ul className="ms-4">
-          <li><Link href="#" className="hover:underline">1. Chapter Name Amet voluptatum culpa exercitationem earum corrupti. Ipsam eaque</Link></li>
-          <li><Link href="#" className="hover:underline">2. Chapter Name</Link></li>
-          <li><Link href="#" className="hover:underline">3. Chapter Name</Link></li>
-          <li><Link href="#" className="hover:underline">4. Chapter Name</Link></li>
-          <li><Link href="#" className="hover:underline">5. Chapter Name</Link></li>
-        </ul>
-      </li>
-      <li>
-        <Link href="/lesson/vol-4" className={linkStyle}>Volume IV</Link>
-        <ul className="ms-4">
-          <li><Link href="#" className="hover:underline">1. Chapter Name Amet voluptatum culpa exercitationem earum corrupti. Ipsam eaque</Link></li>
-          <li><Link href="#" className="hover:underline">2. Chapter Name</Link></li>
-          <li><Link href="#" className="hover:underline">3. Chapter Name</Link></li>
-          <li><Link href="#" className="hover:underline">4. Chapter Name</Link></li>
-          <li><Link href="#" className="hover:underline">5. Chapter Name</Link></li>
-        </ul>
-      </li>
+      {volumeLink}
     </ul>
   );
 }
@@ -73,12 +54,13 @@ interface SideNavPlacehoderT {
 };
 function SideNavPlacehoder({ width, openSideNavigation }: SideNavPlacehoderT) {
   return (
-    <div className={clsx(`w-[${width}px] transition-all duration-300 hidden lg:block`, !openSideNavigation && 'w-0')}>
+    <div className={clsx(`transition-all duration-300 hidden lg:block`, openSideNavigation ? 'w-[300px]' : 'w-0')}>
     </div>
   );
 }
 
 export function SideNavigation() {
+  const routePath = usePathname();
   const [openSideNavigation, setOpenSideNavigation] = useState(true);
   const [openMobileSideNavigation, setOpenMobileSideNavigation] = useState(false);
 
@@ -94,6 +76,11 @@ export function SideNavigation() {
     setOpenMobileSideNavigation(!openMobileSideNavigation);
   }
 
+  useEffect(() => {
+    // if (window.innerWidth > mobileBreakPointPX) return;
+    setOpenMobileSideNavigation(false);
+  }, [routePath]);
+
   return (
     <>
       <button 
@@ -101,17 +88,17 @@ export function SideNavigation() {
           <AiOutlineMenu onClick={handleToggleSidenav} />
       </button>
       <nav 
-        className={clsx('fixed top-0', openSideNavigation ? 'left-0' : 'left-[-300px]', 'bg-white h-full px-4 py-6 w-[300px] transition-all duration-300 overflow-y-auto hidden lg:block')}>
+        className={clsx('fixed top-0 border-e-2', openSideNavigation ? 'left-0' : 'left-[-300px]', 'bg-white h-full px-4 py-6 w-[300px] transition-all duration-300 overflow-y-auto hidden lg:block')}>
         <p className="text-xl">Chapter List</p>
         <ChapterList />
       </nav>
 
       { /* Mobile Navigation */ }
       <button 
-        className={clsx('fixed z-[2] top-4 inline lg:hidden', openMobileSideNavigation ? `right-4 min-[487px]:left-[310px]` : `right-4 min-[487px]:left-4`)}>
+        className={clsx('fixed z-[2] top-4 transition-all duration-300 inline lg:hidden', openMobileSideNavigation ? `right-4 min-[487px]:left-[310px]` : `right-4 min-[487px]:left-4`)}>
           <AiOutlineMenu onClick={handleToggleMobileSidenav} />
       </button>
-      <nav className={clsx(`fixed z-[1] top-0 left-0 bg-white h-full px-4 py-6 w-full min-[487px]:w-[300px] overflow-y-auto lg:hidden`, !openMobileSideNavigation && 'hidden')}>
+      <nav className={clsx(`fixed z-[1] top-0 transition-all duration-300 bg-white h-full px-4 py-6 w-full min-[487px]:border-e-2 min-[487px]:w-[300px] overflow-y-auto`, openMobileSideNavigation ? 'left-[0%] min-[487px]:left-0' : 'left-[-100%] min-[487px]:left-[-300px]')}>
         <p className="text-xl">Chapter List</p>
         <ChapterList />
       </nav>

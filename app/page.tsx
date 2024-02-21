@@ -1,7 +1,12 @@
 import Link from 'next/link';
 import { Noto_Naskh_Arabic } from 'next/font/google';
+import { Metadata } from 'next';
 
 const arabicFont = Noto_Naskh_Arabic({ subsets: ['arabic'], weight: ['400', '700'] });
+
+export const metadata: Metadata = {
+  title: "Introduction | Durusul Lughah"
+};
 
 export default function Home() {
   return (

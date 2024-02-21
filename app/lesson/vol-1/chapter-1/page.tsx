@@ -1,3 +1,9 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Chapter 1. What is This? - Volume I"
+};
+
 export default function Vol_I_Chapter_1() {
   return (
     <section>

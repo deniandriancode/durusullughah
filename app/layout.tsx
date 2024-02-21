@@ -7,7 +7,10 @@ import { SideNavigation, Footer } from '@/app/ui/book';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Durusul Lughah",
+  title: {
+    template: "%s | Durusul Lughah",
+    default: "Durusul Lughah",
+  },
   description: "Making learning Arabic more comfortable.",
 };
 
