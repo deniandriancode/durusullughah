@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Noto_Naskh_Arabic } from 'next/font/google';
 import { Metadata } from 'next';
 
