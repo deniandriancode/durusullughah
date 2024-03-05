@@ -17,7 +17,7 @@ export function ChapterList() {
   const linkStyle = "";
 
   const volumeLink = volumeLinkList.map((v, idx) => {
-    const lis = v.children.map(vv => {
+    const lis = v.children.map((vv: any) => {
         return <li className={linkStyle + ' ' + 'px-1 mt-1 lesson-menu'} key={vv.id}><Link className="inline-block w-full" href={vv.href}>{vv.text}</Link></li>
     });
 

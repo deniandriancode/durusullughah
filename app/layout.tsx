@@ -5,9 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: {
-    default: "Home | Durusul Lughah",
-  },
+  title: "Home | Durusul Lughah",
   description: "Making learning Arabic more comfortable.",
 };
 

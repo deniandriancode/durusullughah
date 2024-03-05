@@ -1,4 +1,4 @@
-export default [
+const quizes: any[] = [
   {
     prompt: "What is two plus two?",
     choices: [
@@ -100,3 +100,5 @@ export default [
     ]
   },
 ];
+
+export default quizes;

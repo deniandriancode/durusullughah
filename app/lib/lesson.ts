@@ -1,4 +1,4 @@
-const volumeLinkList = [
+const volumeLinkList: any[] = [
   {
     id: 0,
     vol: 0,
