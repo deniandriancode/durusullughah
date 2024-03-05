@@ -3,9 +3,38 @@
 @tailwind utilities;
 
 :root {
-    font-size: calc(15px + 0.390625vw);
+  /* font-size: calc(15px + 0.390625vw); */
+  font-size: 18px;
+}
+
+
+nav, footer {
+  font-size: 16px;
+}
+
+@media screen and (min-width: 576px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+    background : transparent;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #d1c2ae;
+    width : 4px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  :root {
+    font-size: 16px;
+  }
+
+  footer {
+    font-size: 14px;
+  }
 }
 
 .arabic {
-    font-size: calc(20px + 0.390625vw);
+  /* font-size: calc(20px + 0.390625vw); */
 }

@@ -1,21 +1,24 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import { Noto_Naskh_Arabic } from 'next/font/google';
 import { Metadata } from 'next';
 
-const arabicFont = Noto_Naskh_Arabic({ subsets: ['arabic'], weight: ['400', '700'] });
+import { Footer } from '@/app/ui/book';
 
 export const metadata: Metadata = {
-  title: "Introduction | Durusul Lughah"
+  title: "Home | Durusul Lughah"
 };
 
 export default function Home() {
   return (
-    <section>
-      <h1 className={arabicFont.className + ' ' + "text-5xl text-center font-bold"} dir="rtl">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</h1>
-      <div className="my-12">
-        <p className="my-4">Introduction about what this site is about and a heartwarming welcome.</p>
-      </div>
-    </section>
+    <main className="container relative min-h-screen max-w-5xl mx-auto px-4 py-4">
+      <section>
+        <div className="my-8">
+          <h1 className="text-5xl font-bold text-center">Durusul Lughah</h1>
+          <p className="text-center mt-10">
+            <Link className="inline-block rounded bg-[#d1c2ae] px-4 py-1" href="/lesson">Start Learning</Link>
+          </p>
+        </div>
+      </section>
+      <Footer />
+    </main>
   );
 }

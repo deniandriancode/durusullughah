@@ -1,0 +1,32 @@
+.lesson-nav {
+  font-size: 0.8rem;
+}
+
+.lesson-head-menu {
+  cursor: default;
+}
+
+.lesson-menu {
+  position: relative;
+  z-index: 1;
+}
+
+.lesson-menu:hover {
+}
+
+.lesson-menu::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #d1c2ae;
+  transition: 300ms;
+  border-radius: 5px;
+}
+
+.lesson-menu:hover::before {
+  width: 100%;
+}

@@ -7,33 +7,28 @@ import { Noto_Naskh_Arabic } from 'next/font/google';
 import clsx from 'clsx';
 import { useState, useEffect } from 'react';
 
+import './book.css';
+
 import volumeLinkList from '@/app/lib/lesson';
 
 const arabicFont = Noto_Naskh_Arabic({ subsets: ['arabic'], weight: ['400', '700'] });
 
 export function ChapterList() {
-  const linkStyle = "hover:underline";
-
-  const [collapse, setCollapse] = useState(Array(volumeLinkList.length).fill(true));
-
-  function handleCollapseMenu(event: any, idx: number) {
-    event.stopPropagation();
-    setCollapse(arr => arr.map((a, i) => i === idx ? !a : a));
-  }
+  const linkStyle = "";
 
   const volumeLink = volumeLinkList.map((v, idx) => {
     const lis = v.children.map(vv => {
-        return <li className={linkStyle} key={vv.id}><Link href={vv.href}>{vv.text}</Link></li>
+        return <li className={linkStyle + ' ' + 'px-1 mt-1 lesson-menu'} key={vv.id}><Link className="inline-block w-full" href={vv.href}>{vv.text}</Link></li>
     });
 
     return (
-      <li key={idx}>
+      <li key={idx} className={"px-1"}>
         <button 
-          className={clsx('flex justify-between items-center w-full text-left')} 
-          onClick={(event) => handleCollapseMenu(event, idx)}>
-            {v.text} <AiOutlineRight className="text-sm" />
+          className={clsx('flex justify-between items-center w-full text-left lesson-head-menu')} 
+        >
+            {v.text}
         </button>
-        <ul className={clsx("ms-4 overflow-y-hidden transition-all duration-500", collapse[idx] ? 'max-h-0' : 'max-h-[1000px]')}>
+        <ul className={clsx("ms-2 overflow-y-hidden")}>
           {lis}
         </ul>
       </li>
@@ -41,8 +36,8 @@ export function ChapterList() {
   });
 
   return (
-    <ul className="my-4">
-      <li><Link href="/" className={linkStyle}>Introduction</Link></li>
+    <ul className="my-4 p-1">
+      <li><Link href="/lesson" className={linkStyle + ' ' + 'px-1 mt-1 inline-block w-full lesson-menu'}>Introduction</Link></li>
       {volumeLink}
     </ul>
   );
@@ -88,8 +83,8 @@ export function SideNavigation() {
           <AiOutlineMenu onClick={handleToggleSidenav} />
       </button>
       <nav 
-        className={clsx('fixed top-0 border-e-2', openSideNavigation ? 'left-0' : 'left-[-300px]', 'bg-white h-full px-4 py-6 w-[300px] transition-all duration-300 overflow-y-auto hidden lg:block')}>
-        <p className="text-xl">Chapter List</p>
+        className={clsx('lesson-nav fixed top-0 border-e-2', openSideNavigation ? 'left-0' : 'left-[-300px]', 'bg-white rounded h-full px-1 py-6 w-[300px] transition-all duration-300 overflow-y-auto hidden lg:block')}>
+        <Link className="text-lg mx-2" href='/'>Home</Link>
         <ChapterList />
       </nav>
 
@@ -98,8 +93,8 @@ export function SideNavigation() {
         className={clsx('fixed z-[2] top-4 transition-all duration-300 inline lg:hidden', openMobileSideNavigation ? `right-4 min-[487px]:left-[310px]` : `right-4 min-[487px]:left-4`)}>
           <AiOutlineMenu onClick={handleToggleMobileSidenav} />
       </button>
-      <nav className={clsx(`fixed z-[1] top-0 transition-all duration-300 bg-white h-full px-4 py-6 w-full min-[487px]:border-e-2 min-[487px]:w-[300px] overflow-y-auto`, openMobileSideNavigation ? 'left-[0%] min-[487px]:left-0' : 'left-[-100%] min-[487px]:left-[-300px]')}>
-        <p className="text-xl">Chapter List</p>
+      <nav className={clsx(`lesson-nav fixed z-[1] top-0 transition-all duration-300 bg-white h-full px-4 py-6 w-full min-[487px]:border-e-2 min-[487px]:w-[300px] overflow-y-auto`, openMobileSideNavigation ? 'left-[0%] min-[487px]:left-0' : 'left-[-100%] min-[487px]:left-[-300px]')}>
+        <Link className="text-lg" href='/'>Home</Link>
         <ChapterList />
       </nav>
       <SideNavPlacehoder width={sideNavWidthPX} openSideNavigation={openSideNavigation} />
