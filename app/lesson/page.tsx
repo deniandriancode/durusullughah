@@ -15,7 +15,7 @@ export default function Home() {
       <div className="my-12">
         <Image width={500} height={80} alt="Basmala Calligraphy" src="/basmala.jpeg" className="mx-auto" />
 
-        <p className="my-8">This project is based on an amazing book by Dr. V. Abdur Rahim <span className="italic">rahimahullah</span> titled <span className='italic'>%apos;Durusul Lughoh Al-Arabiyyah Li Ghairil Nathiqin Biha&apos;</span> which in English is &apos;Arabic Lesson for Non Native Speaker&apos;.</p>
+        <p className="my-8">This project is based on an amazing book by Dr. V. Abdur Rahim <span className="italic">rahimahullah</span> titled <span className='italic'>&apos;Durusul Lughoh Al-Arabiyyah Li Ghairil Nathiqin Biha&apos;</span> which in English is &apos;Arabic Lesson for Non Native Speaker&apos;.</p>
 
         <p className="my-8">I made this website as a hobby project, since there is no online version of this book I decided to make one. This book is intended for those who wants to learn Arabic but find the traditional methods difficult and intimidating. To be honest, when I first learn Arabic, I learn Nahwu and Sharf right away. I&apos;m not saying that this method is wrong, but for people without any Arabic background like me, this method or path is just too difficult. I must memorize a lot, and I mean really a lot, of things without knowing where or when should I use all this thing in my Arabic journey.</p>
 
