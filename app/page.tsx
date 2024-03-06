@@ -16,6 +16,9 @@ export default function Home() {
           <p className="text-center mt-10">
             <Link className="inline-block rounded bg-[#d1c2ae] px-4 py-1" href="/lesson">Start Learning</Link>
           </p>
+          <p className="text-center my-4">
+            <Link className="rounded bg-indigo-200 px-4 py-1" href="/quiz">Try Quiz</Link>
+          </p>
         </div>
       </section>
       <Footer />
