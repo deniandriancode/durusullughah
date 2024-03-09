@@ -1,0 +1,32 @@
+* Introductory Text
+
+With times, I need to review the content of this website as to provide
+more Islamic way of giving instruction and other. I need help!
+
+Sorry for the weird terms, I never really talk about Islam in English, I
+only do it with Indonesian and Arabic, so a lot of Islamic terms would be a
+bit confusing, if you notice error on this project please let me know.
+
+** How Arabic taught in Indonesia
+- Explain how Arabic taught in Indonesia, a method where student begins with
+Nahwu and Sharaf.
+- This method is so intimidating for those who don't have Arabic background
+- There are a lot of memorization from the beginning
+- The feel of learning Arabic is exclusize for Santri and Ustadz
+
+** Arabic online learning resources compared to other languages like English and Japanese
+- High quality and modern learning resources is really lacking for Arabic
+- You need a teacher but resources also need to be there for your independent need
+- No resource -> where can I learn? where can I get to know Arabic in the first place?
+
+** Why this book is different? (Opiniated)
+- Learning by doing type of book is this book!
+- Memorization is done seamlessly
+- Everyone can learn Arabic! Just like everyone can learn English, Spanish, Japanese and any
+  other languages! Arabic is for everyone, it is NOT EXCLUSIVELY for Santri and Ustadz
+
+** Things to note before start learning
+- Prerequisite : able to read Qur'an
+- Differences on how to read Arabic text and The Holy Qur'an
+
+** Not important but this is my first big project in web programming

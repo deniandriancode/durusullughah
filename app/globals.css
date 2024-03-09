@@ -29,6 +29,10 @@ nav, footer {
   :root {
     font-size: 16px;
   }
+
+  nav {
+    font-size: 18px;
+  }
 }
 
 .arabic {

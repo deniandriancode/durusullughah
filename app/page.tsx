@@ -3,6 +3,8 @@ import { Metadata } from 'next';
 
 import { Footer } from '@/app/ui/book';
 
+import "./app.css";
+
 export const metadata: Metadata = {
   title: "Home | Durusul Lughah"
 };
@@ -10,17 +12,13 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="container relative min-h-screen max-w-5xl mx-auto px-4 py-4">
-      <section>
-        <div className="my-8">
+      <section className="min-h-screen grid justify-center items-center">
           <h1 className="text-5xl font-bold text-center">Durusul Lughah</h1>
-          <p className="text-center mt-10">
-            <Link className="inline-block rounded bg-[#d1c2ae] px-4 py-1" href="/lesson">Start Learning</Link>
-          </p>
-          <p className="text-center my-4">
-            <Link className="rounded bg-indigo-200 px-4 py-1" href="/quiz">Try Quiz</Link>
-          </p>
-        </div>
       </section>
+      <div className="min-h-screen mt-8 mb-24 flex flex-col justify-center">
+        <Link className="block max-w-[400px] px-4 py-1 my-1 home-direction" href="/lesson">Start Learning</Link>
+        <Link className="block max-w-[400px] px-4 py-1 my-1 home-direction" href="/quiz">Try Quiz</Link>
+      </div>
       <Footer />
     </main>
   );

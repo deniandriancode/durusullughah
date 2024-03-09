@@ -1,0 +1,21 @@
+.home-direction {
+  position: relative;
+  z-index: 1;
+  border-left: 5px solid #d1c2ae;
+}
+
+.home-direction::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 300ms;
+  width: 0%;
+  height: 100%;
+  background-color: #d1c2ae;
+  z-index: -1;
+}
+
+.home-direction:hover::before {
+  width: 100%;
+}

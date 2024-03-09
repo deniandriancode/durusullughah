@@ -17,14 +17,19 @@ export default function Home() {
 
         <p className="my-8">This project is based on an amazing book by Dr. V. Abdur Rahim <span className="italic">rahimahullah</span> titled <span className='italic'>&apos;Durusul Lughoh Al-Arabiyyah Li Ghairil Nathiqin Biha&apos;</span> which in English is &apos;Arabic Lesson for Non Native Speaker&apos;.</p>
 
-        <p className="my-8">I made this website as a hobby project, since there is no online version of this book I decided to make one. This book is intended for those who wants to learn Arabic but find the traditional methods difficult and intimidating. To be honest, when I first learn Arabic, I learn Nahwu and Sharf right away. I&apos;m not saying that this method is wrong, but for people without any Arabic background like me, this method or path is just too difficult. I must memorize a lot, and I mean really a lot, of things without knowing where or when should I use all this thing in my Arabic journey.</p>
+        <p className="my-8">I made this website as a hobby project, since there is no online version of this book I decided to make one. Before we begin reading the book there are prerequisites, actually there is only one prerequisite and that is you must be able to read Al Qur'an, you are not required to be able to read in advanced level or knowing the terms in tajwid, just basic reading is sufficient.</p>
 
-        <p className="my-8">As I said earlier, the traditional method is not wrong but as everything humanity made, it has flaws, and the following are the flaws of traditional method on learning Arabic. Please do note that this is solely an opinion from someone not even close of being an Arabic expert.</p>
+        <p className="my-8">Reading Arabic text is a bit different from reading Al Qur'an, here are some of the differences.</p>
 
-        <h3 className="text-xl my-8 font-bold">1. Too Many Things to Memorize</h3>
+        <p className="my-8 text-3xl bold">1. Arabic text read as it is</p>
 
-        <p className="my-8">Memorizing has been one of the unique traits of Islam, a lot of <span className="italic">&apos;ibaadah</span> require us to memorize things. We memorize Al Qur&apos;an as many verses as we possibly could, we memorize du&apos;a, hadits and many others.</p>
-        <p>続く。。。</p>
+        <p className="my-8">There is no <span className="italic">'ikhfa</span> in regular Arabic text, the longest <span className="italic">harakat</span> that used in real life converstation is two. The bended horizonal line that read four harakats is read two harakats in practice.</p>
+
+        <p className="my-8 text-3xl bold">2. Every verses in Al Qur'an is Arabic but not every Arabic text is Al Qur'an</p>
+
+        <p className="my-8">Yes, it sounds obvious because it is, however I often find people still think that everything in Arabic is holy and sacred and untouchable which is wrong, Arabic language is just another language in term of human language, just like English, it is used to communicate with other human beings. Al Qur'an is the holy book of Islam that is revealed in Arabic.</p>
+
+        <p className="my-8">I guess that's it, you can start reading the book right away. May Allah make your study easy for you.</p>
       </div>
     </section>
   );
